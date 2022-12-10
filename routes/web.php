@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PaymentController::class, 'index'])->name('home');
+Route::post('payment/store', [PaymentController::class, 'store'])->name('payment.store');
+Route::get('payment/success/{payment}', [PaymentController::class, 'success'])->name('payment.success')->middleware('signed');
