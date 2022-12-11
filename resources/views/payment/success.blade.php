@@ -11,11 +11,12 @@
                     <div class="p-6">
                         <div class="flex items-center">
                             <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs"
-                                                                                 class="underline text-gray-900 dark:text-white">Success</a>
+                                                                                 class="underline text-gray-900 dark:text-white">Payment
+                                    status</a>
                             </div>
                         </div>
-
-                        Your payment of €{{ $payment->amount }} was successfully processed.
+                        <p>Amount: €{{ $payment->amount }}</p>
+                        <p>Status: {{ $payment->payment_state }}</p>
                     </div>
                 </div>
             </div>
